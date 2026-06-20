@@ -46,7 +46,7 @@ function GroupedResults({
               {items.length} statement{items.length !== 1 ? "s" : ""}
             </span>
           </div>
-          <div className="space-y-2 pl-3 border-l-2 border-gray-100 dark:border-gray-800">
+          <div className="divide-y divide-gray-100 dark:divide-gray-800 pl-3 border-l-2 border-gray-100 dark:border-gray-800">
             {items.map((r) => (
               <ResultCard key={r.id} result={r} groupedBy={groupedBy} />
             ))}
@@ -94,7 +94,7 @@ export default function ResultsList({ results, hasQuery, viewMode }: Props) {
   return (
     <>
       {countLine}
-      <div className="space-y-2">
+      <div className="divide-y divide-gray-100 dark:divide-gray-800">
         {results.map((r) => (
           <ResultCard key={r.id} result={r} />
         ))}
