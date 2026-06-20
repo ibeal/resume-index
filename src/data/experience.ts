@@ -550,6 +550,38 @@ export const experience: StatementEntry[] = [
     tags: ["automation", "ServiceNow", "IT"],
   },
 
+  // --- Compiler Capstone (Undergrad, ~2019) ---
+  {
+    id: "capstone-compiler",
+    statement: "Built a compiler for a custom object-oriented language — supporting classes, methods, and pointers — that translated high-level source code into assembly instructions.",
+    context: "Compiler, Assembler & VM — Capstone Project",
+    role: "Student",
+    company: "Utah Valley University",
+    year: 2019,
+    skills: ["compilers", "OOP", "systems programming"],
+    tags: ["compilers", "language design", "systems", "capstone", "undergraduate"],
+  },
+  {
+    id: "capstone-assembler",
+    statement: "Designed and implemented a two-pass assembler that converts custom assembly instructions into bytecode — handling opcode translation, symbol resolution, and instruction parsing.",
+    context: "Compiler, Assembler & VM — Capstone Project",
+    role: "Student",
+    company: "Utah Valley University",
+    year: 2019,
+    skills: ["assembler", "bytecode", "systems programming"],
+    tags: ["assembler", "bytecode", "systems", "capstone", "undergraduate"],
+  },
+  {
+    id: "capstone-vm",
+    statement: "Engineered a stack-based virtual machine to execute the custom bytecode, with optimized memory management to simulate a runtime environment.",
+    context: "Compiler, Assembler & VM — Capstone Project",
+    role: "Student",
+    company: "Utah Valley University",
+    year: 2019,
+    skills: ["virtual machine", "runtime", "systems programming"],
+    tags: ["VM", "runtime", "memory management", "systems", "capstone", "undergraduate"],
+  },
+
   // --- Open Source ---
   {
     id: "tidal-mcp",
