@@ -49,7 +49,7 @@ export default function ResultCard({ result, groupedBy }: Props) {
   const hasDetails = skills.length > 0 || tags.length > 0 || showContext || showRole;
 
   return (
-    <article className="group py-3">
+    <article className="py-3">
       <p className="text-sm text-gray-900 dark:text-gray-100 leading-relaxed">
         {highlight(statement, highlightTerms)}
       </p>
@@ -74,9 +74,7 @@ export default function ResultCard({ result, groupedBy }: Props) {
       {hasDetails && (
         <div
           className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
-            expanded
-              ? "max-h-40 opacity-100 mt-2"
-              : "max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 group-hover:mt-2"
+            expanded ? "max-h-40 opacity-100 mt-2" : "max-h-0 opacity-0"
           }`}
         >
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-2 border-t border-gray-100 dark:border-gray-800/60">
