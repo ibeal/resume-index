@@ -6,12 +6,12 @@ interface Props {
 }
 
 const PLACEHOLDERS = [
-  "e.g. cut pull times by 90%",
-  "e.g. 843 pull requests authored",
-  "e.g. migrated 350 databases",
-  "e.g. built a notification microservice",
-  "e.g. caught a leaked credential",
-  "e.g. founded the backend guild",
+  "e.g. database migration",
+  "e.g. microservice",
+  "e.g. leadership",
+  "e.g. security",
+  "e.g. performance",
+  "e.g. automation",
 ];
 
 export default function SearchBar({ initialValue = "", onChange }: Props) {
