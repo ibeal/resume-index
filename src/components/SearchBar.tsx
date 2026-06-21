@@ -1,16 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
 interface Props {
+  initialValue?: string;
   onChange: (value: string) => void;
 }
 
 const PLACEHOLDERS = [
-  "e.g. Elixir experience",
-  "e.g. paste a job listing",
+  "e.g. database migration",
+  "e.g. microservice",
+  "e.g. leadership",
+  "e.g. security",
+  "e.g. performance",
+  "e.g. automation",
 ];
 
-export default function SearchBar({ onChange }: Props) {
-  const [value, setValue] = useState("");
+export default function SearchBar({ initialValue = "", onChange }: Props) {
+  const [value, setValue] = useState(initialValue);
   const [placeholderIdx, setPlaceholderIdx] = useState(0);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -51,7 +56,7 @@ export default function SearchBar({ onChange }: Props) {
         aria-label="Search experience"
       />
       <p className="mt-2 text-xs text-gray-400 dark:text-gray-500">
-        Try a skill, tool, or paste a job listing
+        Try a skill or tool
       </p>
     </div>
   );
