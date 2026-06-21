@@ -265,7 +265,7 @@ export const experience: StatementEntry[] = [
   // --- Notifications Microservice (2025) ---
   {
     id: "notif-arch",
-    statement: "Architected and delivered a greenfield enterprise notification microservice from infrastructure through email delivery, supporting Teams, Email, SMS, and Slack via a pluggable provider-abstraction layer.",
+    statement: "Architected and delivered a greenfield enterprise notification microservice from infrastructure through email delivery, supporting Teams, Email, and Slack via a pluggable provider-abstraction layer.",
     context: "Enterprise Notification Microservice",
     role: "Software Engineer II",
     company: "Anglepoint",
