@@ -6,9 +6,12 @@ interface Props {
 }
 
 const PLACEHOLDERS = [
-  "e.g. Elixir experience",
-  "e.g. led a team of 5",
-  "e.g. distributed systems",
+  "e.g. cut pull times by 90%",
+  "e.g. 843 pull requests authored",
+  "e.g. migrated 350 databases",
+  "e.g. built a notification microservice",
+  "e.g. caught a leaked credential",
+  "e.g. founded the backend guild",
 ];
 
 export default function SearchBar({ initialValue = "", onChange }: Props) {
