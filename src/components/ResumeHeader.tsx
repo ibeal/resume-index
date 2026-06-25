@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { profile } from "../data/profile";
 
 interface Props {
@@ -15,12 +16,19 @@ export default function ResumeHeader({ dark, onToggleDark }: Props) {
           </h1>
           <p className="text-lg text-gray-500 dark:text-gray-400 mt-1">{profile.title}</p>
         </div>
+        <div className="flex items-center gap-2 mt-1 shrink-0">
+        <Link
+          to="/tailor"
+          className="px-3 py-1.5 text-sm rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          Tailor
+        </Link>
         <button
           onClick={onToggleDark}
           aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-          className="mt-1 p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:text-gray-500
+          className="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:text-gray-500
                      dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800
-                     transition-colors shrink-0"
+                     transition-colors"
         >
           {dark ? (
             // Sun icon
@@ -37,6 +45,7 @@ export default function ResumeHeader({ dark, onToggleDark }: Props) {
             </svg>
           )}
         </button>
+        </div>
       </div>
       <div className="flex flex-wrap gap-4 mt-3 text-sm text-gray-500 dark:text-gray-400">
         <a href={`mailto:${profile.email}`}

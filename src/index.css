@@ -8,3 +8,51 @@ html {
 html.dark {
   background-color: #030712; /* gray-950 */
 }
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0;
+  }
+
+  html, body {
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .resume-pages,
+  .resume-pages * {
+    visibility: visible;
+  }
+
+  .resume-pages {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-pages > * + * {
+    margin-top: 0 !important;
+  }
+
+  .resume-page {
+    width: 8.5in !important;
+    height: 11in !important;
+    aspect-ratio: auto !important;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .resume-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}
