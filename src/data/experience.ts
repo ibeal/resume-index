@@ -146,7 +146,7 @@ export const experience: StatementEntry[] = [
     role: "Software Engineer II",
     company: "Anglepoint",
     year: 2026,
-    skills: [".NET", "Azure SQL", "Azure DevOps"],
+    skills: [".NET", "Angular", "Azure SQL", "Azure DevOps"],
     tags: ["migration", "platform engineering", "consultant tooling"],
   },
   {
@@ -156,7 +156,7 @@ export const experience: StatementEntry[] = [
     role: "Software Engineer II",
     company: "Anglepoint",
     year: 2026,
-    skills: [".NET", "ServiceNow", "Azure SQL"],
+    skills: [".NET", "Angular", "ServiceNow", "Azure SQL"],
     tags: ["integration", "ServiceNow", "consultant tooling"],
   },
 
