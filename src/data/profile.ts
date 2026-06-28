@@ -15,3 +15,33 @@ export const profile: Profile = {
   linkedin: "linkedin.com/in/ian-beal/",
   location: "Remote",
 };
+
+export interface Education {
+  school: string;
+  degree: string;
+  honors?: string;
+  yearStart: number;
+  yearEnd: number;
+}
+
+export const education: Education[] = [
+  {
+    school: "Utah Valley University",
+    degree: "B.S. Computer Science",
+    honors: "Magna Cum Laude",
+    yearStart: 2017,
+    yearEnd: 2021,
+  },
+];
+
+export interface Certification {
+  name: string;
+}
+
+export const certifications: Certification[] = [
+  { name: "Azure Associate Developer" },
+  { name: "Azure Fundamentals" },
+  { name: "Azure Machine Learning Fundamentals" },
+  { name: "LaunchDarkly Silver Certificate" },
+  { name: "GitHub Foundations" },
+];

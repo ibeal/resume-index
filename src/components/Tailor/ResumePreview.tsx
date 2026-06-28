@@ -1,4 +1,4 @@
-import { profile } from "../../data/profile";
+import { certifications, education, profile } from "../../data/profile";
 import { TailoredEntry } from "../../tailor/scoring";
 
 interface Props {
@@ -59,6 +59,49 @@ function RoleSection({ group }: { group: RoleGroup }) {
   );
 }
 
+function SidebarHeading({ children }: { children: string }) {
+  return (
+    <h2 className="text-[10px] font-semibold tracking-wider text-gray-500 uppercase border-b border-gray-300 pb-1 mb-2">
+      {children}
+    </h2>
+  );
+}
+
+function Sidebar() {
+  return (
+    <aside className="w-[2in] shrink-0 space-y-4">
+      {education.length > 0 && (
+        <section>
+          <SidebarHeading>Education</SidebarHeading>
+          <div className="space-y-2">
+            {education.map((e) => (
+              <div key={`${e.school}-${e.degree}`}>
+                <div className="font-semibold">{e.school}</div>
+                <div>{e.degree}</div>
+                {e.honors && <div className="text-gray-600">{e.honors}</div>}
+                <div className="text-[10px] text-gray-500">
+                  {e.yearStart}–{e.yearEnd}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {certifications.length > 0 && (
+        <section>
+          <SidebarHeading>Certifications</SidebarHeading>
+          <ul className="space-y-1">
+            {certifications.map((c) => (
+              <li key={c.name}>{c.name}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </aside>
+  );
+}
+
 function PageFront({ entries }: { entries: TailoredEntry[] }) {
   const groups = groupByRole(entries);
   return (
@@ -72,20 +115,24 @@ function PageFront({ entries }: { entries: TailoredEntry[] }) {
           </p>
         </header>
 
-        <section className="flex-1 min-h-0">
-          <h2 className="text-[10px] font-semibold tracking-wider text-gray-500 uppercase border-b border-gray-300 pb-1 mb-3">
-            Experience
-          </h2>
-          {groups.length === 0 ? (
-            <p className="text-xs text-gray-400 italic">Select entries to build the resume.</p>
-          ) : (
-            <div className="space-y-3">
-              {groups.map((g) => (
-                <RoleSection key={`${g.company}-${g.role}`} group={g} />
-              ))}
-            </div>
-          )}
-        </section>
+        <div className="flex-1 min-h-0 flex gap-6">
+          <section className="flex-1 min-w-0">
+            <h2 className="text-[10px] font-semibold tracking-wider text-gray-500 uppercase border-b border-gray-300 pb-1 mb-3">
+              Experience
+            </h2>
+            {groups.length === 0 ? (
+              <p className="text-xs text-gray-400 italic">Select entries to build the resume.</p>
+            ) : (
+              <div className="space-y-3">
+                {groups.map((g) => (
+                  <RoleSection key={`${g.company}-${g.role}`} group={g} />
+                ))}
+              </div>
+            )}
+          </section>
+
+          <Sidebar />
+        </div>
       </div>
     </div>
   );
